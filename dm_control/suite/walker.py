@@ -17,6 +17,10 @@
 
 import collections
 
+import jax
+from jax import numpy as jp
+from mujoco import mjx
+
 from dm_control import mujoco
 from dm_control.rl import control
 from dm_control.suite import base
@@ -77,10 +81,16 @@ def run(time_limit=_DEFAULT_TIME_LIMIT, random=None, environment_kwargs=None):
       physics, task, time_limit=time_limit, control_timestep=_CONTROL_TIMESTEP,
       **environment_kwargs)
 
-
+"""TO DO"""
 class Physics(mujoco.Physics):
   """Physics simulation with additional features for the Walker domain."""
+  def __init__(self, rng):
+    """TO DO"""
+  
+  def step()
 
+
+  
   def torso_upright(self):
     """Returns projection from z-axes of torso to the z-axes of world."""
     return self.named.data.xmat['torso', 'zz']
@@ -97,7 +107,7 @@ class Physics(mujoco.Physics):
     """Returns planar orientations of all bodies."""
     return self.named.data.xmat[1:, ['xx', 'xz']].ravel()
 
-
+"""TO DO???"""
 class PlanarWalker(base.Task):
   """A planar walker task."""
 
